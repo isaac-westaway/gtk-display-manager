@@ -78,7 +78,8 @@ bool login(const char *username, const char *password, pid_t *child_pid)
     	{
         	chdir(pw->pw_dir);
         	// We don't use ~/.xinitrc because we should already be in the users home directory
-        	char *cmd = "exec /bin/bash --login .xinitrc";
+        	//char *cmd = "exec /bin/bash --login .xinitrc";
+		 char *cmd = "startx";
         	execl(pw->pw_shell, pw->pw_shell, "-c", cmd, NULL);
         	printf("Failed to start window manager");
         	exit(1);

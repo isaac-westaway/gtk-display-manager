@@ -38,6 +38,8 @@ static void* login_func(void *data)
     	{
         	gtk_widget_hide(widget);
 
+		printf("logging");
+
         	// Wait for child process to finish (wait for logout)
         	int status;
         	waitpid(child_pid, &status, 0); // TODO: Handle errors
